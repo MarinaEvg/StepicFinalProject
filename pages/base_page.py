@@ -67,5 +67,9 @@ class BasePage():
         basket_button = self.browser.find_element(*BasePageLocators.BASKET_BUTTON)
         basket_button = WebDriverWait(self.browser, 1).until(
             EC.element_to_be_clickable(BasePageLocators.BASKET_BUTTON)).click()
+            
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                 " probably unauthorised user"
     
     

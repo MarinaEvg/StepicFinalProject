@@ -3,12 +3,12 @@ from .base_page import BasePage
 
 class ProductPage(BasePage):
     def add_product_to_basket(self):
-        self.add_product_in_basket()
+        self.press_button_add_to_basket()
         self.should_be_correct_name_in_message()
         self.should_be_basket_total_value_equal_product_price()
         self.solve_quiz_and_get_code()
     
-    def add_product_in_basket(self):
+    def press_button_add_to_basket(self):
         btn_add_to_basket = self.browser.find_element(*ProductPageLocators.BTN_ADDBSKT)
         btn_add_to_basket.click()
         
