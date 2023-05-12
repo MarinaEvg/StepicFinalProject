@@ -15,7 +15,15 @@ class ProductPageLocators():
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".price_color:nth-child(2)")
     BASKET_TOTAL_VALUE = (By.CSS_SELECTOR, ".alertinner p strong")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "div.alert:nth-child(1)")
+    BTN_VIEWBSKT = (By.CSS_SELECTOR, ".basket-mini a")
     
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_BUTTON = (By.CSS_SELECTOR, ".basket-mini a")
+
+    
+class BasketPageLocators():
+    BASKET_FORMS_WITH_PRODUCTS = (By.CSS_SELECTOR, "#basket_formset")
+    MESSAGE_BASKET_EMPTY = (By.CSS_SELECTOR, "#content_inner>p")
+    

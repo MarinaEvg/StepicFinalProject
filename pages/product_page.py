@@ -3,12 +3,12 @@ from .base_page import BasePage
 
 class ProductPage(BasePage):
     def add_product_to_basket(self):
-        self.press_button_add_to_basket()
+        self.add_product_in_basket()
         self.should_be_correct_name_in_message()
         self.should_be_basket_total_value_equal_product_price()
         self.solve_quiz_and_get_code()
     
-    def press_button_add_to_basket(self):
+    def add_product_in_basket(self):
         btn_add_to_basket = self.browser.find_element(*ProductPageLocators.BTN_ADDBSKT)
         btn_add_to_basket.click()
         
@@ -31,5 +31,9 @@ class ProductPage(BasePage):
     def should_not_be_success_message_is_disappeared(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
        "Success message isn't disappeared, but should be"     
+       
+    def go_to_basket_page_from_product_page(self):
+        btn_view_basket = self.browser.find_element(*ProductPageLocators.BTN_VIEWBSKT)
+        btn_view_basket.click()
     
     
